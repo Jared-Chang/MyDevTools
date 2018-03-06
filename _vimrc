@@ -1,3 +1,4 @@
+set clipboard=unnamed
 set ignorecase smartcase
 nmap zcc :mapclear!<CR>
 nmap zso :source C:\Users\QiFen\_vimrc <CR>
@@ -60,6 +61,9 @@ nmap zrc :vsc CodeMaid.CleanupActiveDocument<CR>
 imap zrc <Esc>:vsc CodeMaid.CleanupActiveDocument<CR>
 nmap zrz :vsc CodeMaid.ReorganizeActiveDocument<CR>
 imap zrz <Esc>:vsc CodeMaid.ReorganizeActiveDocument<CR>
+
+nmap zac yiw:vsc Project.AddClass<CR><C-V>
+imap zac <Esc>:vsc Project.AddClass<CR>
 
 nmap za; $a;<Esc>
 imap za; <Esc>$a;<Esc>
