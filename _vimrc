@@ -1,11 +1,11 @@
 set clipboard=unnamed
 set ignorecase smartcase
 nmap zcc :mapclear!<CR>
-nmap zso :source C:\Users\QiFen\_vimrc <CR>
+nmap zso :source C:\Users\Jared\_vimrc <CR>
 imap <F1> <Esc>y?[T<CR>p/void<CR>w
 nmap <F1> y?[T<CR>p/void<CR>w
-imap <F2> <Esc>y?TEST(<CR>p4wciw
-nmap <F2> y?TEST(<CR>p4wciw
+imap <F2> <Esc>y?TEST_F(<CR>p4wciw
+nmap <F2> y?TEST_F(<CR>p4wciw
 nmap zrn :vsc Project.AddNewItem<CR> 
 nmap zm :vsc CodeMaid.CleanupActiveDocument<CR>:make<CR>
 nmap zra zz:vsc CodeMaid.CleanupActiveDocument<CR>:vsc TestExplorer.RunAllTests<CR>:vsc TestExplorer.ShowTestExplorer<CR>
@@ -79,7 +79,6 @@ vmap za; <Esc>$a;<Esc>
 :nmap ll $
 :imap zl <End>
 :nmap hc ^C
-:nmap zb bcw
 :imap zd <Esc>dd
 nmap j gj
 nmap k gk
