@@ -36,13 +36,13 @@ imap zk <Esc>:vsc View.NavigateBackward<CR>
 nmap zj :vsc View.NavigateForward<CR>
 imap zj <Esc>:vsc View.NavigateForward<CR>
 
-nmap zw1 :vsc Window.ApplyWindowLayout1<CR>
-nmap zw2 :vsc Window.ApplyWindowLayout2<CR>
-nmap zw3 :vsc Window.ApplyWindowLayout3<CR>
-nmap zw4 :vsc Window.ApplyWindowLayout4<CR>
-nmap zw5 :vsc Window.ApplyWindowLayout5<CR>
-nmap zw6 :vsc Window.ApplyWindowLayout6<CR>
-nmap zw7 :vsc Window.ApplyWindowLayout7<CR>
+nmap z1 :vsc Window.ApplyWindowLayout1<CR>
+nmap z2 :vsc Window.ApplyWindowLayout2<CR>
+nmap z3 :vsc Window.ApplyWindowLayout3<CR>
+nmap z4 :vsc Window.ApplyWindowLayout4<CR>
+nmap z5 :vsc Window.ApplyWindowLayout5<CR>
+nmap z6 :vsc Window.ApplyWindowLayout6<CR>
+nmap z7 :vsc Window.ApplyWindowLayout7<CR>
 nmap zfs :vsc View.FullScreen<CR>
 
 nmap zgi :vsc VAssistX.GotoImplementation<CR>
