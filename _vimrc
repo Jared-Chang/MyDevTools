@@ -49,9 +49,9 @@ nmap zgi :vsc VAssistX.GotoImplementation<CR>
 imap <Esc>zgi :vsc VAssistX.GotoImplementation<CR>
 vmap <Esc>zgi :vsc VAssistX.GotoImplementation<CR>
 
-nmap za; $a;<Esc>
-imap za; <Esc>$a;<Esc>
-vmap za; <Esc>$a;<Esc>
+nmap za; A;<Esc>
+imap za; <Esc>A;<Esc>
+vmap za; <Esc>A;<Esc>
 
 :vmap <Esc> <Esc><Esc><Esc>
 :imap jj <Esc>
