@@ -1,20 +1,22 @@
-set clipboard=unnamed
 set ignorecase smartcase
 
 nmap zcc :mapclear!<CR>
 nmap zso :source C:\Users\Jared\_vimrc <CR>
 
-imap zct <Esc>y?TEST_F(<CR>p4wciw
-nmap zct y?TEST_F(<CR>p4wciw
+imap zctf <Esc>y?TEST_F(<CR>p4wciw
+nmap zctf y?TEST_F(<CR>p4wciw
+
+imap zct <Esc>y?TEST(<CR>p4wciw
+nmap zct y?TEST(<CR>p4wciw
 
 nmap zai :vsc Project.AddNewItem<CR> 
 
 nmap zac yiw:vsc Project.AddClass<CR><C-V>
 imap zac <Esc>:vsc Project.AddClass<CR>
 
-nmap zra zz:vsc TestExplorer.RunAllTests<CR>
-imap zra <Esc>zz:vsc TestExplorer.RunAllTests<CR>
-vmap zra <Esc><Esc>zz:vsc TestExplorer.RunAllTests<CR>
+nmap zra zz:vsc TestExplorer.RunAllTests<CR>zst
+imap zra <Esc>zz:vsc TestExplorer.RunAllTests<CR>zst
+vmap zra <Esc><Esc>zz:vsc TestExplorer.RunAllTests<CR>zst
 
 nmap zrl zz:vsc TestExplorer.RepeatLastRun<CR>
 imap zrl <Esc>zz:vsc TestExplorer.RepeatLastRun<CR>
