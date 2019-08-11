@@ -1,0 +1,15 @@
+[user]
+	name = Jared.Chang
+	email = Jared.Chang@vivotek.com
+[credential]
+	helper = manager
+[winUpdater]
+	recentlySeenVersion = 2.22.0.windows.1
+[diff]      
+	tool = vscodediff    
+[difftool]      
+	prompt = false    
+[difftool "vscodediff"]      
+	cmd = \""/c/Users/Jared/AppData/Local/Programs/Microsoft VS Code/Code.exe"\" --diff "$LOCAL" "$REMOTE"
+[include]
+	path = ~/.gitalias
