@@ -3,11 +3,8 @@ set ignorecase smartcase
 nmap zcc :mapclear!<CR>
 nmap zso :source C:\Users\Jared\_vimrc <CR>
 
-imap zcf <Esc>y?TEST_F(<CR>p4wciw
-nmap zcf y?TEST_F(<CR>p4wciw
-
-imap zct <Esc>y?TEST(<CR>p4wciw
-nmap zct y?TEST(<CR>p4wciw
+imap zct <Esc>y?TEST<CR>p4wciw
+nmap zct y?TEST<CR>p4wciw
 
 nmap zai :vsc Project.AddNewItem<CR> 
 
