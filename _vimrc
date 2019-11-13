@@ -1,10 +1,10 @@
 set ignorecase smartcase
 
 nmap zcc :mapclear!<CR>
-nmap zso :source C:\Users\Jared\_vimrc <CR>
+nmap zso :source C:\Users\QiFen\_vimrc <CR>
 
-imap zct <Esc>y?TEST<CR>p4wciw
-nmap zct y?TEST<CR>p4wciw
+imap zct <Esc>o<Esc>y?TEST<CR>p4wciw
+nmap zct o<Esc>y?TEST<CR>p4wciw
 
 nmap zai :vsc Project.AddNewItem<CR> 
 
@@ -48,9 +48,9 @@ nmap zgi :vsc VAssistX.GotoImplementation<CR>
 imap <Esc>zgi :vsc VAssistX.GotoImplementation<CR>
 vmap <Esc>zgi :vsc VAssistX.GotoImplementation<CR>
 
-nmap za; A;<Esc>
-imap za; <Esc>A;<Esc>
-vmap za; <Esc>A;<Esc>
+nmap z; A;<Esc>
+imap z; <Esc>A;<Esc>
+vmap z; <Esc>A;<Esc>
 
 :vmap <Esc> <Esc><Esc><Esc>
 :imap jj <Esc>
