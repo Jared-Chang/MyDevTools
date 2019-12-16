@@ -1,15 +1,19 @@
 [user]
-	name = Jared.Chang
-	email = Jared.Chang@vivotek.com
-[credential]
-	helper = manager
+	name = QiFen.Pocket
+	email = QiFen.Pocket@gmail.com
+
 [winUpdater]
-	recentlySeenVersion = 2.22.0.windows.1
-[diff]      
-	tool = vscodediff    
-[difftool]      
-	prompt = false    
-[difftool "vscodediff"]      
-	cmd = \""/c/Users/Jared/AppData/Local/Programs/Microsoft VS Code/Code.exe"\" --diff "$LOCAL" "$REMOTE"
+	recentlySeenVersion = 2.24.1.windows.2
+	
+[merge]
+    tool = vscode
+[mergetool "vscode"]
+    cmd = code --wait $MERGED
+
+[diff]
+    tool = vscode
+[difftool "vscode"]
+    cmd = code --wait --diff $LOCAL $REMOTE
+
 [include]
 	path = ~/.gitalias
