@@ -48,6 +48,8 @@ nmap zgi :vsc VAssistX.GotoImplementation<CR>
 imap <Esc>zgi :vsc VAssistX.GotoImplementation<CR>
 vmap <Esc>zgi :vsc VAssistX.GotoImplementation<CR>
 
+nmap <Space> :vsc Tools.InvokeAceJumpCommand<CR>
+
 nmap z; A;<Esc>
 imap z; <Esc>A;<Esc>
 vmap z; <Esc>A;<Esc>
