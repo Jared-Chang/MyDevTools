@@ -2,12 +2,12 @@ set ignorecase smartcase
 
 """""""""""""""""""Misc
 nmap zcc :mapclear!<CR>
-nmap zso :source $VIM/_vimrc  <CR>
+nmap zso :source $VIM/_vimrc<CR>
 
 """""""""""""""""""Testing
 "Copy test case from NUnit or Google Test
-imap zt <Esc>o<Esc>y?\[Test\|TEST<CR>p/)<CR>Bciw
-nmap zt o<Esc>y?\[Test\|TEST<CR>p/)<CR>Bciw
+imap zct <Esc>o<Esc>y?\[Test\|TEST<CR>p/)<CR>Bciw
+nmap zct o<Esc>y?\[Test\|TEST<CR>p/)<CR>Bciw
 
 "Clean up code and run all test and open test explorer
 nmap zra :vsc ReSharper.ReSharper_SilentCleanupCode<CR>zz:vsc TestExplorer.RunAllTests<CR>zst
@@ -49,8 +49,16 @@ vmap zi <Esc>:vsc VAssistX.GotoImplementation<CR>
 nmap ,m :vsc ReSharper.ReSharper_GotoFileMember<CR>
 
 "jump to define or usage or declaraction or parameter
-nmap zf :vsc ReSharper.ReSharper_GoToDeclaration<CR>:vsc EditorContextMenus.CodeWindow.Navigate.ReSharper_NavigateToParameter<CR>
-imap zf <Esc>:vsc ReSharper.ReSharper_GoToDeclaration<CR>:vsc EditorContextMenus.CodeWindow.Navigate.ReSharper_NavigateToParameter<CR>
+nmap zf :vsc ReSharper.ReSharper_GoToDeclaration<CR>:vsc Resharper.ReSharper_GotoUsage<CR>
+imap zf <Esc>:vsc ReSharper.ReSharper_GoToDeclaration<CR>:vsc Resharper.ReSharper_GotoUsage<CR>
+
+"find usages of symbol
+nmap zus :vsc Resharper.ReSharper_GotoUsage<CR>
+imap zus <Esc>:vsc Resharper.ReSharper_GotoUsage<CR>
+
+"Open find usage window
+nmap zuu :vsc Resharper.Resharper_FindUsages<CR>
+imap zuu <Esc>:vsc Resharper.Resharper_FindUsages<CR>
 
 "jump to error (red wave)
 nmap zn :vsc ReSharper.ReSharper_GotoPrevErrorInSolution<CR>
@@ -71,6 +79,10 @@ vmap M :vsc ReSharper.ReSharper_ExtractMethod<CR><Esc>
 
 "Rename
 nmap zrr :vsc ReSharper.ReSharper_Rename<CR><Esc>
+
+"Show auto complete window
+nmap zcw :vsc Edit.CompleteWord<CR>
+imap zcw <Esc>:vsc Edit.CompleteWord<CR><Esc>
 
 "Inline variable
 map ziv :vsc ReSharper.ReSharper_InlineVariable<CR><Esc>
@@ -114,6 +126,10 @@ nmap zrx dd?SetUp<CR>jp:vsc ReSharper.ReSharper_SilentCleanupCode<CR>
 
 """""""""""""""""""Misc
 
+"Open output window
+nmap zo :vsc View.Output<CR>
+imap zo <Esc>:vsc View.Output<CR>
+
 "Copy history with search
 nmap zpm :vsc ReSharper.ReSharper_PasteMultiple<CR>
 imap zpm <Esc>:vsc ReSharper.ReSharper_PasteMultiple<CR>
@@ -131,14 +147,12 @@ vmap z; <Esc>A;<Esc>
 
 "go to line head
 nmap hh ^
-imap hh <Esc>^i
 
 "go to line tail
 nmap ll $
-imap ll <End>
 
 "Delete line in insert mode
-imap zd <Esc>dd
+imap zdd <Esc>dd
 
 "Reformat code and build
 nmap zm :vsc ReSharper.ReSharper_ReformatCode<CR>:make<CR>
@@ -149,10 +163,6 @@ nmap <BS> a<BS>
 "paste from yank not delete
 nmap ,p "0p
 nmap ,P "0P
-
-"Forget usage
-"imap <A-F1> <Esc>may?[F<CR>`ap/void<CR>wzz
-"nmap <A-F1> may?[F<CR>`ap/void<CR>wzz
 
 """"""""""""""""""""""""""""""""""""""""""""""""Deprecated""""""""""""""""""""""""""""""""""""""""""""""
 """""Use resharper create file
