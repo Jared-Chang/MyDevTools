@@ -10,24 +10,24 @@ imap zct <Esc>o<Esc>y?\[Test\|TEST<CR>p/)<CR>Bciw
 nmap zct o<Esc>y?\[Test\|TEST<CR>p/)<CR>Bciw
 
 "Clean up code and run all test and open test explorer
-nmap zra :vsc ReSharper.ReSharper_SilentCleanupCode<CR>zz:vsc TestExplorer.RunAllTests<CR>zst
-imap zra <Esc>:vsc ReSharper.ReSharper_SilentCleanupCode<CR>zz:vsc TestExplorer.RunAllTests<CR>zst
-vmap zra <Esc>:vsc ReSharper.ReSharper_SilentCleanupCode<CR>zz:vsc TestExplorer.RunAllTests<CR>zst
+nmap zra :vsc ReSharper.ReSharper_SilentCleanupCode<CR>zz:vsc Resharper.Resharper_UnitTestRunSolution<CR>zst
+imap zra <Esc>:vsc ReSharper.ReSharper_SilentCleanupCode<CR>zz:vsc Resharper.Resharper_UnitTestRunSolution<CR>zst
+vmap zra <Esc>:vsc ReSharper.ReSharper_SilentCleanupCode<CR>zz:vsc Resharper.Resharper_UnitTestRunSolution<CR>zst
 
 "Open test explorer
-nmap zst zz:vsc TestExplorer.ShowTestExplorer<CR>
-imap zst <Esc>zz:vsc TestExplorer.ShowTestExplorer<CR>
-vmap zst <Esc><Esc>zz:vsc TestExplorer.ShowTestExplorer<CR>
+nmap zst zz:vsc Resharper.ReSharper_ShowUnitTestSessions<CR>
+imap zst <Esc>zz:vsc Resharper.ReSharper_ShowUnitTestSessions<CR>
+vmap zst <Esc><Esc>zz:vsc Resharper.ReSharper_ShowUnitTestSessions<CR>
 
 "Repeat last test
-nmap zrl zz:vsc TestExplorer.RepeatLastRun<CR>
-imap zrl <Esc>zz:vsc TestExplorer.RepeatLastRun<CR>
-vmap zrl <Esc>zz:vsc TestExplorer.RepeatLastRun<CR>
+nmap zrl zz:vsc Resharper.ReSharper_UnitTestSessionRepeatPreviousRun<CR>
+imap zrl <Esc>zz:vsc Resharper.ReSharper_UnitTestSessionRepeatPreviousRun<CR>
+vmap zrl <Esc>zz:vsc Resharper.ReSharper_UnitTestSessionRepeatPreviousRun<CR>
 
-"Debug last test
-nmap zdl :vsc ReSharper.ReSharper_SilentCleanupCode<CR>zz:vsc TestExplorer.DebugLastRun<CR>
-imap zdl <Esc>:vsc ReSharper.ReSharper_SilentCleanupCode<CR>zz<Esc>zz:vsc TestExplorer.DebugLastRun<CR>
-vmap zdl <Esc>:vsc ReSharper.ReSharper_SilentCleanupCode<CR>zz<Esc>zz:vsc TestExplorer.DebugLastRun<CR>
+"Debug current test under cursor
+nmap zdu :vsc ReSharper.ReSharper_SilentCleanupCode<CR>zz:vsc Resharper.ReSharper_UnitTestDebugContext<CR>
+imap zdu <Esc>:vsc ReSharper.ReSharper_SilentCleanupCode<CR>zz<Esc>zz:vsc Resharper.ReSharper_UnitTestDebugContext<CR>
+vmap zdu <Esc>:vsc ReSharper.ReSharper_SilentCleanupCode<CR>zz<Esc>zz:vsc Resharper.ReSharper_UnitTestDebugContext<CR>
 
 """""""""""""""""Navigation
 "Navigate backward
