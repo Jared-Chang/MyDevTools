@@ -124,6 +124,10 @@ nmap zrs dd?class<CR>jo[SetUp]<CR>public<Space>void<Space>SetUp(){<CR>}<Esc>P:vs
 "Move line to SetUp when SetUp exist C# only
 nmap zrx dd?SetUp<CR>jp:vsc ReSharper.ReSharper_SilentCleanupCode<CR>
 
+"Call postfix template
+nmap z. lla.
+imap z. <Esc>lla.
+
 """""""""""""""""""Misc
 
 "Open output window
