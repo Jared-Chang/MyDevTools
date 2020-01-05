@@ -1,8 +1,13 @@
 set ignorecase smartcase
+set rnu
 
 """""""""""""""""""Misc
 nmap zcc :mapclear!<CR>
 nmap zso :source $VIM/_vimrc<CR>
+
+"enable/disable relative number
+nmap <F1> :set rnu<CR>
+nmap <F2> :set nornu<CR>
 
 """""""""""""""""""Testing
 "Copy test case from NUnit or Google Test
@@ -49,8 +54,8 @@ vmap zi <Esc>:vsc VAssistX.GotoImplementation<CR>
 nmap ,m :vsc ReSharper.ReSharper_GotoFileMember<CR>
 
 "jump to define or usage or declaraction or parameter
-nmap zf :vsc ReSharper.ReSharper_GoToDeclaration<CR>:vsc Resharper.ReSharper_GotoUsage<CR>
-imap zf <Esc>:vsc ReSharper.ReSharper_GoToDeclaration<CR>:vsc Resharper.ReSharper_GotoUsage<CR>
+nmap zf :vsc ReSharper.ReSharper_GoToDeclaration<CR>:vsc EditorContextMenus.CodeWindow.Navigate.ReSharper_NavigateToParameter<CR>
+imap zf <Esc>:vsc ReSharper.ReSharper_GoToDeclaration<CR>:vsc EditorContextMenus.CodeWindow.Navigate.ReSharper_NavigateToParameter<CR>
 
 "find usages of symbol
 nmap zus :vsc Resharper.ReSharper_GotoUsage<CR>
@@ -98,7 +103,7 @@ vmap P :vsc ReSharper.ReSharper_IntroduceParameter<CR><Esc>
 "Introduce Field
 nmap zif :vsc ReSharper.ReSharper_IntroduceField<CR><Esc>
 imap zif <Esc>:vsc ReSharper.ReSharper_IntroduceField<CR><Esc>
-vmap zif <Esc>:vsc ReSharper.ReSharper_IntroduceField<CR><Esc>
+vmap zif :vsc ReSharper.ReSharper_IntroduceField<CR><Esc>
 
 "Introduce field after find var and word
 nmap zvf ?var <CR>w:vsc ReSharper.ReSharper_IntroduceField<CR><Esc>
@@ -124,9 +129,16 @@ nmap zrs dd?class<CR>jo[SetUp]<CR>public<Space>void<Space>SetUp(){<CR>}<Esc>P:vs
 "Move line to SetUp when SetUp exist C# only
 nmap zrx dd?SetUp<CR>jp:vsc ReSharper.ReSharper_SilentCleanupCode<CR>
 
+"Move block to SetUp when SetUp not exist C# only
+vmap zrs d?class<CR>jo[SetUp]<CR>public<Space>void<Space>SetUp(){<CR>}<Esc>P:vsc ReSharper.ReSharper_SilentCleanupCode<CR>
+
+"Move block to SetUp when SetUp exist C# only
+vmap zrx d?SetUp<CR>jp:vsc ReSharper.ReSharper_SilentCleanupCode<CR>
+
 "Call postfix template
 nmap z. lla.
 imap z. <Esc>lla.
+vmap z. <Esc>lla.
 
 """""""""""""""""""Misc
 
@@ -143,11 +155,6 @@ nmap zro :vsc ReSharper.ReSharper_Move<CR>
 
 "newline and back to break point
 nmap <C-CR> mza<CR><Esc>`z
-
-"Add ;
-nmap z; A;<Esc>
-imap z; <Esc>A;<Esc>
-vmap z; <Esc>A;<Esc>
 
 "go to line head
 nmap hh ^
@@ -187,3 +194,8 @@ nmap ,P "0P
 
 "nmap zgc zz:make<CR>:vsc Team.Git.GotoGitChanges<CR>
 "nmap zgp :vsc Team.Git.Pull<CR>
+
+"Complete Statment use Ctrl + Alt + Enter
+"nmap z; :vsc Resharper.Resharper_CompleteStatement<CR>
+"imap z; <Esc>z;
+"vmap z; <Esc>z;
