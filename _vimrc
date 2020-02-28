@@ -19,6 +19,16 @@ nmap zra :vsc ReSharper.ReSharper_SilentCleanupCode<CR>zz:vsc Resharper.Resharpe
 imap zra <Esc>:vsc ReSharper.ReSharper_SilentCleanupCode<CR>zz:vsc Resharper.Resharper_UnitTestRunSolution<CR>zst
 vmap zra <Esc>:vsc ReSharper.ReSharper_SilentCleanupCode<CR>zz:vsc Resharper.Resharper_UnitTestRunSolution<CR>zst
 
+"Clean up code and run test session and open test explorer
+nmap zrt :vsc ReSharper.ReSharper_SilentCleanupCode<CR>zz:vsc Resharper.ReSharper_UnitTestRunCurrentSession<CR>zst
+imap zrt <Esc>:vsc ReSharper.ReSharper_SilentCleanupCode<CR>zz:vsc Resharper.ReSharper_UnitTestRunCurrentSession<CR>zst
+vmap zrt <Esc>:vsc ReSharper.ReSharper_SilentCleanupCode<CR>zz:vsc Resharper.ReSharper_UnitTestRunCurrentSession<CR>zst
+
+"Clean up code and run test on current context and open test explorer
+nmap zrc :vsc ReSharper.ReSharper_SilentCleanupCode<CR>zz:vsc Resharper.ReSharper_UnitTestRunFromContext<CR>zst
+imap zrc <Esc>:vsc ReSharper.ReSharper_SilentCleanupCode<CR>zz:vsc Resharper.ReSharper_UnitTestRunFromContext<CR>zst
+vmap zrc <Esc>:vsc ReSharper.ReSharper_SilentCleanupCode<CR>zz:vsc Resharper.ReSharper_UnitTestRunFromContext<CR>zst
+
 "Open test explorer
 nmap zst zz:vsc Resharper.ReSharper_ShowUnitTestSessions<CR>
 imap zst <Esc>zz:vsc Resharper.ReSharper_ShowUnitTestSessions<CR>
@@ -175,6 +185,9 @@ nmap <BS> a<BS>
 nmap ,p "0p
 nmap ,P "0P
 
+"Open git commit
+nmap zgc zz:make<CR>:vsc Team.Git.GotoGitChanges<CR>
+
 """"""""""""""""""""""""""""""""""""""""""""""""Deprecated""""""""""""""""""""""""""""""""""""""""""""""
 """""Use resharper create file
 "nmap zai :vsc Project.AddNewItem<CR> 
@@ -192,7 +205,6 @@ nmap ,P "0P
 "nmap z3 :vsc Window.ApplyWindowLayout3<CR>
 "nmap zfs :vsc View.FullScreen<CR>
 
-"nmap zgc zz:make<CR>:vsc Team.Git.GotoGitChanges<CR>
 "nmap zgp :vsc Team.Git.Pull<CR>
 
 "Complete Statment use Ctrl + Alt + Enter
