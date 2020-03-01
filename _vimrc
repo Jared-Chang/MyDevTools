@@ -55,11 +55,6 @@ nmap zj :vsc View.NavigateForward<CR>
 imap zj <Esc>:vsc View.NavigateForward<CR>
 vmap zj <Esc>:vsc View.NavigateForward<CR>
 
-"Go to implementation
-nmap zi :vsc VAssistX.GotoImplementation<CR>
-imap zi <Esc>:vsc VAssistX.GotoImplementation<CR>
-vmap zi <Esc>:vsc VAssistX.GotoImplementation<CR>
-
 "Like Alt+m
 nmap ,m :vsc ReSharper.ReSharper_GotoFileMember<CR>
 
@@ -100,7 +95,7 @@ nmap zcw :vsc Edit.CompleteWord<CR>
 imap zcw <Esc>:vsc Edit.CompleteWord<CR><Esc>
 
 "Inline variable
-map ziv :vsc ReSharper.ReSharper_InlineVariable<CR><Esc>
+map zia :vsc ReSharper.ReSharper_InlineVariable<CR><Esc>
 
 "Introduce variable
 map zv :vsc ReSharper.ReSharper_IntroVariable<CR><Esc>
