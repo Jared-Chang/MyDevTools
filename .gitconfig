@@ -1,6 +1,6 @@
 [user]
-	name = QiFen.Pocket
-	email = QiFen.Pocket@gmail.com
+	name = Jared.Chang
+	email = Jared.Chang@titansoft.com.sg
 
 [winUpdater]
 	recentlySeenVersion = 2.24.1.windows.2
@@ -12,8 +12,14 @@
 
 [diff]
     tool = vscode
+[difftool]
+    prompt = false
+    
 [difftool "vscode"]
+    prompt = false
     cmd = code --wait --diff $LOCAL $REMOTE
 
 [include]
 	path = ~/.gitalias
+[credential]
+	helper = store
