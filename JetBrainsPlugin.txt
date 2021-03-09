@@ -1,0 +1,3 @@
+ideavim
+acejump
+idea-sourcetrail

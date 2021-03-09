@@ -1,0 +1,509 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.macitbetter.betterzip.alfred</string>
+	<key>connections</key>
+	<dict>
+		<key>070037CF-5104-494D-AD16-5E0E8FC34F2D</key>
+		<array/>
+		<key>7055C09F-B3EC-4CDE-BFF0-421866F8FAC8</key>
+		<array/>
+		<key>7B76757A-71B8-4520-AB13-04C1F363EE24</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>070037CF-5104-494D-AD16-5E0E8FC34F2D</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>8C7ACF45-58D2-4434-9369-F899B37EF64A</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>E95E9975-47FD-4008-98D5-8EB8F877FF8B</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>8F1C59EC-E77A-41A8-940B-A58E2DBD8230</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>7055C09F-B3EC-4CDE-BFF0-421866F8FAC8</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>A7B9A733-3116-447B-B81B-6B0627971FCB</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>F2709D4E-FC7C-41CE-AC1A-A6811E9C5F4A</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>AB137610-5935-4FEF-823F-6F1E671D70F0</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>8C7ACF45-58D2-4434-9369-F899B37EF64A</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>E95E9975-47FD-4008-98D5-8EB8F877FF8B</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>7B76757A-71B8-4520-AB13-04C1F363EE24</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>F2709D4E-FC7C-41CE-AC1A-A6811E9C5F4A</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>8F1C59EC-E77A-41A8-940B-A58E2DBD8230</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>F67E81A8-F06B-491F-8FEC-67C7E3727344</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>A7B9A733-3116-447B-B81B-6B0627971FCB</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Robert Rezabek</string>
+	<key>description</key>
+	<string>Compress or extract the selection with a BetterZip preset</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>BetterZip</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<true/>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>import ScriptingBridge
+import time
+import urllib
+import os
+import sys
+
+preset = os.environ['preset'].decode('utf-8')
+items = os.environ['items'].decode('utf-8').split('\t')
+
+BetterZip = ScriptingBridge.SBApplication.applicationWithBundleIdentifier_(os.environ['bundleId'])
+archives = BetterZip.queuedArchive_withPreset_withOptions_showUi_(items, preset, {}, True)</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>3</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>070037CF-5104-494D-AD16-5E0E8FC34F2D</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>acceptsmulti</key>
+				<true/>
+				<key>filetypes</key>
+				<array/>
+				<key>name</key>
+				<string>Compress with BetterZip</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.action</string>
+			<key>uid</key>
+			<string>AB137610-5935-4FEF-823F-6F1E671D70F0</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<true/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>keyword</key>
+				<string>compression presets</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>Getting Presets</string>
+				<key>script</key>
+				<string>import sys
+import json
+from Foundation import NSUserDefaults
+import os
+
+standardUserDefaults = NSUserDefaults.standardUserDefaults()
+persistentDomain = standardUserDefaults.persistentDomainForName_(os.environ['bundleId'])
+presets = persistentDomain.objectForKey_('MIBSavePresets')
+items = []
+
+for preset in presets:
+	items.append({'arg': preset['name'].encode('utf-8'), 'title': preset['name']})
+
+print (json.dumps({'items':items}))
+</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string>subtext</string>
+				<key>title</key>
+				<string>Preset</string>
+				<key>type</key>
+				<integer>3</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>E95E9975-47FD-4008-98D5-8EB8F877FF8B</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string></string>
+				<key>variables</key>
+				<dict>
+					<key>items</key>
+					<string>{query}</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>8C7ACF45-58D2-4434-9369-F899B37EF64A</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string></string>
+				<key>variables</key>
+				<dict>
+					<key>preset</key>
+					<string>{query}</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>7B76757A-71B8-4520-AB13-04C1F363EE24</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>acceptsmulti</key>
+				<true/>
+				<key>filetypes</key>
+				<array>
+					<string>+public.archive</string>
+				</array>
+				<key>name</key>
+				<string>Extract with BetterZip</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.action</string>
+			<key>uid</key>
+			<string>F67E81A8-F06B-491F-8FEC-67C7E3727344</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<true/>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>import ScriptingBridge
+import time
+import urllib
+import os
+import sys
+
+preset = os.environ['preset'].decode('utf-8')
+items = os.environ['items'].decode('utf-8').split('\t')
+
+BetterZip = ScriptingBridge.SBApplication.applicationWithBundleIdentifier_(os.environ['bundleId'])
+files = BetterZip.queuedUnarchive_withPreset_withOptions_showUi_(items, preset, {}, True)</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>3</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>7055C09F-B3EC-4CDE-BFF0-421866F8FAC8</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<true/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>keyword</key>
+				<string>extraction presets</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>Getting Presets</string>
+				<key>script</key>
+				<string>import sys
+import json
+from Foundation import NSUserDefaults
+import os
+
+standardUserDefaults = NSUserDefaults.standardUserDefaults()
+persistentDomain = standardUserDefaults.persistentDomainForName_(os.environ['bundleId'])
+presets = persistentDomain.objectForKey_('MIBExtractPresets')
+items = []
+
+for preset in presets:
+	items.append({'arg': preset['name'].encode('utf-8'), 'title': preset['name']})
+
+print (json.dumps({'items':items}))</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string>subtext</string>
+				<key>title</key>
+				<string>Preset</string>
+				<key>type</key>
+				<integer>3</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>F2709D4E-FC7C-41CE-AC1A-A6811E9C5F4A</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string></string>
+				<key>variables</key>
+				<dict>
+					<key>preset</key>
+					<string>{query}</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>8F1C59EC-E77A-41A8-940B-A58E2DBD8230</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string></string>
+				<key>variables</key>
+				<dict>
+					<key>items</key>
+					<string>{query}</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>A7B9A733-3116-447B-B81B-6B0627971FCB</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>This workflow adds two file actions for extracting and compressing files using a BetterZip preset. Configure your presets in the BetterZip preferences on the tab "Presets".</string>
+	<key>uidata</key>
+	<dict>
+		<key>070037CF-5104-494D-AD16-5E0E8FC34F2D</key>
+		<dict>
+			<key>xpos</key>
+			<integer>790</integer>
+			<key>ypos</key>
+			<integer>210</integer>
+		</dict>
+		<key>7055C09F-B3EC-4CDE-BFF0-421866F8FAC8</key>
+		<dict>
+			<key>xpos</key>
+			<integer>790</integer>
+			<key>ypos</key>
+			<integer>340</integer>
+		</dict>
+		<key>7B76757A-71B8-4520-AB13-04C1F363EE24</key>
+		<dict>
+			<key>xpos</key>
+			<integer>690</integer>
+			<key>ypos</key>
+			<integer>240</integer>
+		</dict>
+		<key>8C7ACF45-58D2-4434-9369-F899B37EF64A</key>
+		<dict>
+			<key>xpos</key>
+			<integer>390</integer>
+			<key>ypos</key>
+			<integer>240</integer>
+		</dict>
+		<key>8F1C59EC-E77A-41A8-940B-A58E2DBD8230</key>
+		<dict>
+			<key>xpos</key>
+			<integer>690</integer>
+			<key>ypos</key>
+			<integer>370</integer>
+		</dict>
+		<key>A7B9A733-3116-447B-B81B-6B0627971FCB</key>
+		<dict>
+			<key>xpos</key>
+			<integer>390</integer>
+			<key>ypos</key>
+			<integer>370</integer>
+		</dict>
+		<key>AB137610-5935-4FEF-823F-6F1E671D70F0</key>
+		<dict>
+			<key>xpos</key>
+			<integer>200</integer>
+			<key>ypos</key>
+			<integer>210</integer>
+		</dict>
+		<key>E95E9975-47FD-4008-98D5-8EB8F877FF8B</key>
+		<dict>
+			<key>xpos</key>
+			<integer>490</integer>
+			<key>ypos</key>
+			<integer>210</integer>
+		</dict>
+		<key>F2709D4E-FC7C-41CE-AC1A-A6811E9C5F4A</key>
+		<dict>
+			<key>xpos</key>
+			<integer>490</integer>
+			<key>ypos</key>
+			<integer>340</integer>
+		</dict>
+		<key>F67E81A8-F06B-491F-8FEC-67C7E3727344</key>
+		<dict>
+			<key>xpos</key>
+			<integer>200</integer>
+			<key>ypos</key>
+			<integer>340</integer>
+		</dict>
+	</dict>
+	<key>variables</key>
+	<dict>
+		<key>bundleId</key>
+		<string>com.macitbetter.betterzip</string>
+	</dict>
+	<key>version</key>
+	<string>1.0</string>
+	<key>webaddress</key>
+	<string>https://macitbetter.com</string>
+</dict>
+</plist>

@@ -1,0 +1,16 @@
+{
+    "name": "midnite81/alfred-uuid",
+    "description": "Creates a v4 uuid and copies it to the clipboard",
+    "type": "project",
+    "require": {
+        "ramsey/uuid": "^4.0"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Simon Rogers",
+            "email": "webdev@centralblue.co.uk"
+        }
+    ],
+    "minimum-stability": "stable"
+}

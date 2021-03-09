@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>uk.midnite.uuid</string>
+	<key>connections</key>
+	<dict>
+		<key>1918926D-EB49-4837-85A0-E9D70FF3D427</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>9B2090D2-4760-453C-93D2-E3FEAF84980F</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>9B2090D2-4760-453C-93D2-E3FEAF84980F</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>B1B8760E-6CC9-48CF-A788-29DB75B44CF5</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>45B70072-AEB9-4729-A1B5-9F3CA0314AF3</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Simon Rogers</string>
+	<key>description</key>
+	<string>Generates a v4 UUID</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Generate Uuid</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>uuid</string>
+				<key>subtext</key>
+				<string></string>
+				<key>text</key>
+				<string>Generate a uuid</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>1918926D-EB49-4837-85A0-E9D70FF3D427</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>100</integer>
+				<key>script</key>
+				<string>&lt;?php
+
+include "Uuid.php";
+
+$uuid = new Uuid(); 
+
+echo $uuid-&gt;getUuid();
+
+?&gt;</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>1</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>9B2090D2-4760-453C-93D2-E3FEAF84980F</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>Uuid copied to clipboard</string>
+				<key>title</key>
+				<string>Uuid</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>B1B8760E-6CC9-48CF-A788-29DB75B44CF5</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+				<key>transient</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>45B70072-AEB9-4729-A1B5-9F3CA0314AF3</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>This generates a universally unique identifier v4 (uuid) and copies it to the clipboard, it also notifies you via notification that it's been copied to the clipboard.</string>
+	<key>uidata</key>
+	<dict>
+		<key>1918926D-EB49-4837-85A0-E9D70FF3D427</key>
+		<dict>
+			<key>xpos</key>
+			<integer>240</integer>
+			<key>ypos</key>
+			<integer>160</integer>
+		</dict>
+		<key>45B70072-AEB9-4729-A1B5-9F3CA0314AF3</key>
+		<dict>
+			<key>xpos</key>
+			<integer>545</integer>
+			<key>ypos</key>
+			<integer>275</integer>
+		</dict>
+		<key>9B2090D2-4760-453C-93D2-E3FEAF84980F</key>
+		<dict>
+			<key>xpos</key>
+			<integer>390</integer>
+			<key>ypos</key>
+			<integer>160</integer>
+		</dict>
+		<key>B1B8760E-6CC9-48CF-A788-29DB75B44CF5</key>
+		<dict>
+			<key>xpos</key>
+			<integer>540</integer>
+			<key>ypos</key>
+			<integer>160</integer>
+		</dict>
+	</dict>
+	<key>variablesdontexport</key>
+	<array/>
+	<key>version</key>
+	<string>1.0.0</string>
+	<key>webaddress</key>
+	<string>https://centralblue.co.uk</string>
+</dict>
+</plist>

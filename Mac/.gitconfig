@@ -1,7 +1,7 @@
 [user]
-	name = Jared.Chang
-	email = Jared.Chang@titansoft.com.sg
-	
+	email = JaredChang@kkboxgroup.com
+	name = JaredChang
+
 [merge]
     tool = vscode
 [mergetool "vscode"]
@@ -12,10 +12,10 @@
 [difftool]
     prompt = false
 [difftool "vscode"]
-    prompt = false
-    cmd = code --wait --diff $LOCAL $REMOTE
+    cmd = code --wait --diff $LOCAL $REMOTE
 
 [include]
 	path = ~/.gitalias
+
 [credential]
 	helper = store
