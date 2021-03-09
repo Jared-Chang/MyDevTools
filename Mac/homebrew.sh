@@ -24,6 +24,7 @@ brew install --cask cheatsheet
 brew install --cask royal-tsx           //backup royal-tsx settings
 brew install --cask eul
 brew install --cask betterzip
+brew install --cask cleanshot
 
 brew install autojump
 brew install htop
