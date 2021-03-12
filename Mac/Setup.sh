@@ -1,8 +1,17 @@
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zinit/master/doc/install.sh)"
-sh $0/homebrew.sh
+working_directory=$(dirname "$0")
 
-ln $0/../gitalias/gitalias.txt ~/.gitalias
-ln $0/.gitconfig ~/.gitconfig
-ln $0/.p10k.zsh ~/.p10k.zsh
-ln $0/.zshrc ~/.zshrc
-ln $0/ssh.config ~/.ssh/config
+rm -f ~/.gitalias
+ln $dir/../gitalias/gitalias.txt ~/.gitalias
+rm -f ~/.gitconfig
+ln $dir/.gitconfig ~/.gitconfig
+rm -f ~/.p10k.zsh
+ln $dir/.p10k.zsh ~/.p10k.zsh
+rm -f ~/.zshrc
+ln $dir/.zshrc ~/.zshrc
+mkdir ~/.ssh
+rm -f ~/.ssh/config
+ln $dir/ssh.config ~/.ssh/config
+
+softwareupdate --install-rosetta
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zinit/master/doc/install.sh)"
+sh $dir/homebrew.sh
