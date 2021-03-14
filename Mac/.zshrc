@@ -7,6 +7,10 @@ fi
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+[[ ! -f /opt/homebrew/bin/brew ]] && eval "$(/opt/homebrew/bin/brew shellenv)"
+[ -f /opt/homebrew/etc/profile.d/autojump.sh ] && . /opt/homebrew/etc/profile.d/autojump.sh
+
+eval "$(pyenv init -)"
 
 bindkey "^[[H" beginning-of-line
 bindkey "^[[F" end-of-line
@@ -18,8 +22,6 @@ export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/b
 alias l="ls -lA"
 alias g="git"
 alias lg="l | grep -i"
-
-eval "$(pyenv init -)"
 
 to-bpe-workstation-1() {
   establish_proxy bpe-workstation-1 5050 8080
@@ -51,8 +53,6 @@ disestablish_proxy() {
 
   echo "http proxy has disestablished"
 }
-
-#plugins=(git)
 
 ### Added by Zinit's installer
 if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
@@ -87,7 +87,6 @@ zinit light zsh-users/zsh-completions
 zinit snippet OMZ::lib/completion.zsh
 zinit snippet OMZ::lib/history.zsh
 zinit snippet OMZ::lib/theme-and-appearance.zsh
-zinit snippet OMZ::plugins/autojump/autojump.plugin.zsh
 zinit snippet OMZ::plugins/command-not-found/command-not-found.plugin.zsh
 
 zinit ice as"completion"
@@ -99,5 +98,3 @@ zinit load djui/alias-tips
 
 zinit ice depth=1
 zinit light romkatv/powerlevel10k 
-
-eval "$(/opt/homebrew/bin/brew shellenv)"
