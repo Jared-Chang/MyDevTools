@@ -6,6 +6,7 @@ brew install pyenv
 pyenv install 3.9.1
 eval "$(pyenv init -)"
 pyenv global 3.9.1
+pip install cookiecutter
 
 brew install --cask jetbrains-toolbox
 brew install --cask pycharm             //backup settings
@@ -27,8 +28,8 @@ brew install --cask betterzip
 brew install --cask cleanshot
 brew install --cask microsoft-edge 
 brew install --cask slack
+brew install --cask tunnelblick
 
 brew install autojump
 brew install htop
-brew install cookiecutter
 brew install tmux
