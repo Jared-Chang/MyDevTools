@@ -175,6 +175,8 @@ ohai "Downloading and installing Mac DevTool..."
   ln $PWD/Mac/.zshrc ~/.zshrc
   rm -rf ~/.ssh
   ln -s $PWD/Mac/ssh ~/.ssh
+  rm -rf ~/.myzsh
+  ln -s $PWD/Mac/zsh ~/.myzsh
   
   softwareupdate --install-rosetta
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zinit/master/doc/install.sh)"
