@@ -11,6 +11,23 @@ tty_red="$(tty_mkbold 31)"
 tty_bold="$(tty_mkbold 39)"
 tty_reset="$(tty_escape 0)"
 
+should_install_command_line_tools() {
+  if [[ -n "${HOMEBREW_ON_LINUX-}" ]]; then
+    return 1
+  fi
+
+  if version_gt "$macos_version" "10.13"; then
+    ! [[ -e "/Library/Developer/CommandLineTools/usr/bin/git" ]]
+  else
+    ! [[ -e "/Library/Developer/CommandLineTools/usr/bin/git" ]] ||
+      ! [[ -e "/usr/include/iconv.h" ]]
+  fi
+}
+
+if should_install_command_line_tools; then
+  ohai "The Xcode Command Line Tools will be installed."
+fi
+
 shell_join() {
   local arg
   printf "%s" "$1"
@@ -30,6 +47,59 @@ execute() {
     abort "$(printf "Failed during: %s" "$(shell_join "$@")")"
   fi
 }
+
+execute_sudo() {
+  local -a args=("$@")
+  if have_sudo_access; then
+    if [[ -n "${SUDO_ASKPASS-}" ]]; then
+      args=("-A" "${args[@]}")
+    fi
+    ohai "/usr/bin/sudo" "${args[@]}"
+    execute "/usr/bin/sudo" "${args[@]}"
+  else
+    ohai "${args[@]}"
+    execute "${args[@]}"
+  fi
+}
+
+getc() {
+  local save_state
+  save_state=$(/bin/stty -g)
+  /bin/stty raw -echo
+  IFS= read -r -n 1 -d '' "$@"
+  /bin/stty "$save_state"
+}
+
+if should_install_command_line_tools && version_ge "$macos_version" "10.13"; then
+  ohai "Searching online for the Command Line Tools"
+  # This temporary file prompts the 'softwareupdate' utility to list the Command Line Tools
+  clt_placeholder="/tmp/.com.apple.dt.CommandLineTools.installondemand.in-progress"
+  execute_sudo "$TOUCH" "$clt_placeholder"
+
+  clt_label_command="/usr/sbin/softwareupdate -l |
+                      grep -B 1 -E 'Command Line Tools' |
+                      awk -F'*' '/^ *\\*/ {print \$2}' |
+                      sed -e 's/^ *Label: //' -e 's/^ *//' |
+                      sort -V |
+                      tail -n1"
+  clt_label="$(chomp "$(/bin/bash -c "$clt_label_command")")"
+
+  if [[ -n "$clt_label" ]]; then
+    ohai "Installing $clt_label"
+    execute_sudo "/usr/sbin/softwareupdate" "-i" "$clt_label"
+    execute_sudo "/bin/rm" "-f" "$clt_placeholder"
+    execute_sudo "/usr/bin/xcode-select" "--switch" "/Library/Developer/CommandLineTools"
+  fi
+fi
+
+# Headless install may have failed, so fallback to original 'xcode-select' method
+if should_install_command_line_tools && test -t 0; then
+  ohai "Installing the Command Line Tools (expect a GUI popup):"
+  execute_sudo "/usr/bin/xcode-select" "--install"
+  echo "Press any key when the installation has completed."
+  getc
+  execute_sudo "/usr/bin/xcode-select" "--switch" "/Library/Developer/CommandLineTools"
+fi
 
 # installation
 
