@@ -11,22 +11,10 @@ tty_red="$(tty_mkbold 31)"
 tty_bold="$(tty_mkbold 39)"
 tty_reset="$(tty_escape 0)"
 
-should_install_command_line_tools() {
-  if [[ -n "${HOMEBREW_ON_LINUX-}" ]]; then
-    return 1
-  fi
-
-  if version_gt "$macos_version" "10.13"; then
-    ! [[ -e "/Library/Developer/CommandLineTools/usr/bin/git" ]]
-  else
-    ! [[ -e "/Library/Developer/CommandLineTools/usr/bin/git" ]] ||
-      ! [[ -e "/usr/include/iconv.h" ]]
-  fi
+abort() {
+  printf "%s\n" "$@"
+  exit 1
 }
-
-if should_install_command_line_tools; then
-  ohai "The Xcode Command Line Tools will be installed."
-fi
 
 shell_join() {
   local arg
@@ -46,6 +34,35 @@ execute() {
   if ! "$@"; then
     abort "$(printf "Failed during: %s" "$(shell_join "$@")")"
   fi
+}
+
+have_sudo_access() {
+  local -a args
+  if [[ -n "${SUDO_ASKPASS-}" ]]; then
+    args=("-A")
+  elif [[ -n "${NONINTERACTIVE-}" ]]; then
+    args=("-n")
+  fi
+
+  if [[ -z "${HAVE_SUDO_ACCESS-}" ]]; then
+    if [[ -n "${args[*]-}" ]]; then
+      SUDO="/usr/bin/sudo ${args[*]}"
+    else
+      SUDO="/usr/bin/sudo"
+    fi
+    if [[ -n "${NONINTERACTIVE-}" ]]; then
+      ${SUDO} -l mkdir &>/dev/null
+    else
+      ${SUDO} -v && ${SUDO} -l mkdir &>/dev/null
+    fi
+    HAVE_SUDO_ACCESS="$?"
+  fi
+
+  if [[ -z "${HOMEBREW_ON_LINUX-}" ]] && [[ "$HAVE_SUDO_ACCESS" -ne 0 ]]; then
+    abort "Need sudo access on macOS (e.g. the user $USER needs to be an Administrator)!"
+  fi
+
+  return "$HAVE_SUDO_ACCESS"
 }
 
 execute_sudo() {
@@ -69,6 +86,30 @@ getc() {
   IFS= read -r -n 1 -d '' "$@"
   /bin/stty "$save_state"
 }
+
+version_gt() {
+  [[ "${1%.*}" -gt "${2%.*}" ]] || [[ "${1%.*}" -eq "${2%.*}" && "${1#*.}" -gt "${2#*.}" ]]
+}
+version_ge() {
+  [[ "${1%.*}" -gt "${2%.*}" ]] || [[ "${1%.*}" -eq "${2%.*}" && "${1#*.}" -ge "${2#*.}" ]]
+}
+
+should_install_command_line_tools() {
+  if [[ -n "${HOMEBREW_ON_LINUX-}" ]]; then
+    return 1
+  fi
+
+  if version_gt "$macos_version" "10.13"; then
+    ! [[ -e "/Library/Developer/CommandLineTools/usr/bin/git" ]]
+  else
+    ! [[ -e "/Library/Developer/CommandLineTools/usr/bin/git" ]] ||
+      ! [[ -e "/usr/include/iconv.h" ]]
+  fi
+}
+
+if should_install_command_line_tools; then
+  ohai "The Xcode Command Line Tools will be installed."
+fi
 
 if should_install_command_line_tools && version_ge "$macos_version" "10.13"; then
   ohai "Searching online for the Command Line Tools"
