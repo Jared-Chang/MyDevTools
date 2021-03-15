@@ -1,3 +1,9 @@
+# Installation
+
+``` bash
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zinit/master/doc/install.sh)"
+```
+
 1. disable spotlight from System Preferences/Keyboard/Shortcuts/Spotlight
 2. setup alfred default hotkey to cmd-space
 3. install fiddler
