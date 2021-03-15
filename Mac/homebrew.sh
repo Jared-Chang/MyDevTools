@@ -32,6 +32,5 @@ brew install --cask microsoft-edge
 brew install --cask slack
 brew install --cask tunnelblick
 
-brew install autojump
 brew install htop
 brew install tmux

@@ -38,7 +38,11 @@ zinit snippet OMZ::plugins/docker/_docker
 zinit ice as"completion"
 zinit snippet OMZ::plugins/docker-compose/_docker-compose
 
-zinit load djui/alias-tips
+zinit ice lucid wait='0'
+zinit light djui/alias-tips
+
+zinit ice lucid wait='0'
+zinit light agkozak/zsh-z
 
 zinit ice depth=1
 zinit light romkatv/powerlevel10k 
