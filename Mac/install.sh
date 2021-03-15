@@ -1,9 +1,4 @@
-if [[ -z "$1" ]]; then
-  echo "You must provide a path for dev tool repository"
-  exit 1
-fi
-
-DEVTOOL_REPOSITORY=$1
+DEVTOOL_REPOSITORY=~/project/MyDevTools
 DEVTOOL_REMOTE_REPOSITORY="https://github.com/QiFenPocket/MyDevTools"
 
 mkdir -p $DEVTOOL_REPOSITORY
