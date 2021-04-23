@@ -81,6 +81,7 @@
   s = status
   w = whatchanged
   sw = switch
+  swc = switch -C
   re = restore
 
 
@@ -194,6 +195,8 @@
 
   # log with one line per item.
   lo = log --oneline
+
+  ln = log --oneline --name-only
 
   # log with patch generation.
   lp = log --patch
@@ -344,6 +347,8 @@
   #     5dae0a0 - whatever
   #
   rbi = rebase --interactive @{upstream}
+
+  rbm = rebase -i master
 
   # See https://blog.filippo.io/git-fixup-amending-an-older-commit/
   # This is a slightly modified version
@@ -870,6 +875,11 @@
   # Do a push/pull for just one branch
   push1 = "!git push origin $(git branch-name)"
   pull1 = "!git pull origin $(git branch-name)"
+
+  pu = "!git push -u origin $(git branch-name)"
+  puf = !git push -f
+
+  cauf = !git au && git cane && git push -f
 
   # Track and untrack, with default parameters, and with printing the command
   track = "!f(){ branch=$(git rev-parse --abbrev-ref HEAD); cmd=\"git branch $branch -u ${1:-origin}/${2:-$branch}\"; echo $cmd; $cmd; }; f"

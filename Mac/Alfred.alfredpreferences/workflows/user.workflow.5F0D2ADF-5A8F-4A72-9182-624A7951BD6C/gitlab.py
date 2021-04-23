@@ -98,7 +98,7 @@ def main(wf):
     for project in projects:
         wf.add_item(title=project['name_with_namespace'],
                     subtitle=project['path_with_namespace'],
-                    arg=project['web_url'],
+                    arg=','.join([project['web_url'], project['ssh_url_to_repo']]),
                     valid=True,
                     icon=None,
                     uid=project['id'])

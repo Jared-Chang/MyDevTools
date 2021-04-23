@@ -28,3 +28,7 @@ disestablish_proxy() {
 
   echo "http proxy has disestablished"
 }
+
+connect_to_first_pod_by_name() {
+  kubectl exec --stdin --tty $(kubectl get pods | grep "$1") -- /bin/bash
+}

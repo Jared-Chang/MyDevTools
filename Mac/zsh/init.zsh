@@ -10,5 +10,11 @@ fi
 [[ ! -f /opt/homebrew/bin/brew ]] || eval "$(/opt/homebrew/bin/brew shellenv)"
 [ -f /opt/homebrew/etc/profile.d/autojump.sh ] && . /opt/homebrew/etc/profile.d/autojump.sh
 
-eval "$(pyenv init -)"
-export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+eval "$(pyenv init --path)"
+eval $(thefuck --alias)
+PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+PATH="$PATH:/Users/jaredchang/Library/Android/sdk/platform-tools"
+PATH="$PATH:/Users/jaredchang/go/bin"
+PATH="$PATH:/Users/jaredchang/.composer/vendor/bin"
+PATH="$PATH:/opt/homebrew/opt/openjdk@11/bin"
+PATH="$PATH:/opt/homebrew/opt/mysql-client/bin"

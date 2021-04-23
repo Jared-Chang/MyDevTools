@@ -1,0 +1,8 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "## Acceptance Criteria\n\n  - *Given*: \n  - *When*:\n  - *Then*: ",
+    "uid" : "720E82E6-CF25-4ABA-90DB-73736989E8F6",
+    "name" : "AcceptanceCriteria",
+    "keyword" : "AC"
+  }
+}

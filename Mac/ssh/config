@@ -1,4 +1,59 @@
-Host kkbox-corp-bpe-workstation
-    ProxyCommand ssh jump.kkbox.group -W %h:%p
-Host bpe-workstation-1
-    ProxyCommand ssh jump.kkbox.group -W %h:%p
+Host outsourcing
+    HostName 3.0.51.218
+    User admin
+    IdentityFile ~/.ssh/outsourcing-key.pem
+
+Host sftp
+    HostName 52.220.226.115
+    User admin
+    IdentityFile ~/.ssh/kkfarm-2017.pem
+
+Host metabase
+    HostName 18.136.210.127
+    User admin
+    IdentityFile ~/.ssh/kkfarm-2017.pem
+
+Host stage
+    HostName 13.228.169.168
+    User admin
+    IdentityFile ~/.ssh/kkfarm-2017.pem
+
+Host web-1
+    HostName 54.151.142.142
+    User admin
+    IdentityFile ~/.ssh/kkfarm-2017.pem
+
+Host web-2
+    HostName 54.179.126.195
+    User admin
+    IdentityFile ~/.ssh/kkfarm-2017.pem
+
+Host inspector
+    HostName 54.179.230.187
+    User admin
+    IdentityFile ~/.ssh/kkfarm-2017.pem
+
+Host worker-1
+    HostName 52.221.121.238
+    User admin
+    IdentityFile ~/.ssh/kkfarm-2017.pem
+
+Host worker-2
+    HostName 18.136.38.8
+    User admin
+    IdentityFile ~/.ssh/kkfarm-2017.pem
+
+Host worker-3
+    HostName 13.212.22.38
+    User admin
+    IdentityFile ~/.ssh/kkfarm-2017.pem
+
+Host fuckedupsummer-1
+    HostName 18.139.71.163
+    User admin
+    IdentityFile ~/.ssh/kkfarm-2017.pem
+
+Host official-site
+    HostName 13.212.248.97
+    User admin
+    IdentityFile ~/.ssh/kkfarm-2017.pem

@@ -1,0 +1,8 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "- Reporter：\n- Stakeholder: @bpe\n\n## 前情提要\n\n<!--有助於理解這整件事的背景資訊-->\n\n## 問題描述\n\n<!--忠實紀錄問題與需求，切勿直接留下解法-->\n\n## 待辦事項\n\n<!--善用概念上的子任務，避免單一個 issue 混雜太多支線任務而失焦-->\n\n- [ ] TODO 1\n\n  > result or conclusion\n\n## 重要資訊\n<!--條列過程中蒐集到的重要資訊，不用每次都在 comment 裡翻找-->",
+    "uid" : "E6285B55-6F3E-4577-901A-631784B1015D",
+    "name" : "GeneralIssue",
+    "keyword" : "General Issue"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "## Added\n\n  - #18 Add EditorConfig for auto formating\n\n## Changed\n\n  - #40 Modify release templates for fulfill current requirement\n\n## Fixed\n\n  - #40 Example\n\n## Security\n\n  - #40 Example",
+    "uid" : "58427A21-BE74-44ED-A77B-80849243F89E",
+    "name" : "ReleaseNote",
+    "keyword" : "rn"
+  }
+}
