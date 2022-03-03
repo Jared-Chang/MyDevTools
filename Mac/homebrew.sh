@@ -12,9 +12,10 @@ eval "$(pyenv init -)"
 pyenv global 3.10.0
 pip install --upgrade pip
 
-# go
+# library
 
 brew install go
+brew install flutter
 
 # aws
 
@@ -30,7 +31,6 @@ brew install --cask postman
 
 # Misc
 
-brew install --cask bettertouchtool     #backup btt plugin
 brew install --cask appcleaner
 brew install --cask deepl
 brew install --cask 1password
@@ -40,10 +40,12 @@ brew install --cask cheatsheet
 brew install --cask eul
 brew install --cask betterzip
 brew install --cask cleanshot
-brew install --cask microsoft-edge 
+brew install --cask brave-browser
 brew install --cask slack
 brew install --cask adobe-acrobat-reader
 brew install --cask obsidian
+brew install --cask logseq
+brew install --cask mos
 
 # Command line tools
 

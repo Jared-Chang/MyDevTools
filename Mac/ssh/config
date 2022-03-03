@@ -18,6 +18,16 @@ Host stage
     User admin
     IdentityFile ~/.ssh/kkfarm-2017.pem
 
+Host dev-web-1
+    HostName 18.136.228.7
+    User admin
+    IdentityFile ~/.ssh/kkfarm-2017.pem
+
+Host dev-worker-1
+    HostName 13.229.176.165
+    User admin
+    IdentityFile ~/.ssh/kkfarm-2017.pem
+
 Host web-1
     HostName 54.151.142.142
     User admin
