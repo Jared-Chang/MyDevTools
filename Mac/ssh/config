@@ -3,13 +3,17 @@ Host outsourcing
     User admin
     IdentityFile ~/.ssh/outsourcing-key.pem
 
+Host 13.212.37.230
+    User admin
+    IdentityFile ~/.ssh/kkfarm-2017.pem
+
 Host sftp
     HostName 52.220.226.115
     User admin
     IdentityFile ~/.ssh/kkfarm-2017.pem
 
 Host metabase
-    HostName 18.136.210.127
+    HostName 52.220.15.26
     User admin
     IdentityFile ~/.ssh/kkfarm-2017.pem
 

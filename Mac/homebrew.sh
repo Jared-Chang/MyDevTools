@@ -27,7 +27,7 @@ brew install --cask jetbrains-toolbox   #backup settings
 brew install --cask visual-studio-code  #backup settings and plugin
 brew install --cask iterm2              #backup iterm2 settings
 brew install --cask docker
-brew install --cask postman
+brew install --cask insomnia
 
 # Misc
 
@@ -56,3 +56,4 @@ brew install fd
 brew install exa
 brew install dog
 brew install mysql-client
+brew install glab

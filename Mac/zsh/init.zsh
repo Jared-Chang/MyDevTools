@@ -20,3 +20,6 @@ PATH="/opt/homebrew/opt/openjdk@11/bin:$PATH"
 PATH="$PATH:/opt/homebrew/opt/mysql-client/bin"
 PATH="/Users/jaredchang/Library/Android/sdk/tools/bin:$PATH"
 PATH="/opt/homebrew/opt/node@16/bin:$PATH"
+PATH="/opt/homebrew/opt/go@1.17/bin:$PATH"
+
+
