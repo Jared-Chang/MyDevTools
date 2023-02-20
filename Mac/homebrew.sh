@@ -7,10 +7,6 @@ brew upgrade git
 
 # Python
 brew install python3
-brew install pyenv
-pyenv install 3.10.0
-eval "$(pyenv init -)"
-pyenv global 3.10.0
 pip install --upgrade pip
 
 # library
@@ -55,21 +51,15 @@ brew install --cask appcleaner
 brew install --cask deepl
 brew install --cask 1password
 brew install --cask 1password/tap/1password-cli
-brew install --cask dash                #backup dash settings
 brew install --cask alfred              
 brew install --cask eul
-brew install --cask betterzip
 brew install --cask cleanshot
 brew install --cask brave-browser
-brew install --cask firefox-developer-edition
 brew install --cask slack
-brew install --cask adobe-acrobat-reader
 brew install --cask obsidian
-brew install --cask logseq
 brew install --cask mos
 brew install --cask rectangle
 brew install --case todoist
-brew install --cask responsively
 
 # Command line tools
 
