@@ -1,0 +1,10 @@
+[profile sa]
+region = ap-northeast-1
+[profile playground]
+region = ap-northeast-1
+[profile kkbox-payer]
+region = ap-northeast-1
+[profile kfa]
+region = ap-northeast-1
+[profile billing]
+region = ap-northeast-1

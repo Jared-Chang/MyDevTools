@@ -81,7 +81,7 @@
   s = status
   w = whatchanged
   sw = switch
-  swc = switch -C
+  sc = switch -C
   re = restore
 
 

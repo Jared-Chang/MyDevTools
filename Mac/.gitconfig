@@ -14,6 +14,9 @@
 [difftool "vscode"]
     cmd = code --wait --diff $LOCAL $REMOTE
 
+[push]
+    autoSetupRemote = true
+
 [include]
 	path = ~/.gitalias
 

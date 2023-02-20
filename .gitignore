@@ -1,5 +1,6 @@
 .DS_Store
 *.pyc
 id_rsa
+id_rsa_kfa
 id_rsa.pub
 *.pem

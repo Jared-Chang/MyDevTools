@@ -177,6 +177,8 @@ ohai "Downloading and installing Mac DevTool..."
   ln -s $PWD/Mac/ssh ~/.ssh
   rm -rf ~/.myzsh
   ln -s $PWD/Mac/zsh ~/.myzsh
+  rm -rf ~/.aws/config
+  ln $PWD/Mac/aws/config ~/.aws/config
   
   softwareupdate --install-rosetta
   sh -c "$(curl -fsSL https://git.io/zinit-install)"

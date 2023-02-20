@@ -16,16 +16,25 @@ autoload -Uz _zinit
 zinit ice lucid wait='0' atinit='zpcompinit'
 zinit light zdharma/fast-syntax-highlighting
 
+zinit ice lucid wait='0' atinit='zpcompinit'
+zinit light zdharma/fast-syntax-highlighting
+
 zinit ice lucid wait="0" atload='_zsh_autosuggest_start'
 zinit light zsh-users/zsh-autosuggestions
 
 zinit ice lucid wait='0'
 zinit light zsh-users/zsh-completions
 
+zinit ice lucid wait="0" atload='eval "$(aws-vault --completion-script-zsh)"'
+zinit ice lucid wait="0" atload='complete -C "/opt/homebrew/bin/aws_completer" aws'
+zinit ice lucid wait="0" atload='source <(kubectl completion zsh)'
+
 zinit snippet OMZ::lib/completion.zsh
 zinit snippet OMZ::lib/history.zsh
 zinit snippet OMZ::lib/theme-and-appearance.zsh
 zinit snippet OMZ::plugins/command-not-found/command-not-found.plugin.zsh
+zinit snippet OMZ::plugins/aws
+zinit snippet OMZ::plugins/fzf
 
 zinit ice as"completion"
 zinit snippet OMZ::plugins/docker/_docker
@@ -40,3 +49,8 @@ zinit light agkozak/zsh-z
 
 zinit ice depth=1
 zinit light romkatv/powerlevel10k 
+
+zinit ice lucid wait='0'
+zinit light Aloxaf/fzf-tab
+
+zstyle ':completion:*:*:aws' fzf-search-display true

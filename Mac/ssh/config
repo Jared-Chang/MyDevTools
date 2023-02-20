@@ -71,3 +71,9 @@ Host official-site
     HostName 13.212.248.97
     User admin
     IdentityFile ~/.ssh/kkfarm-2017.pem
+
+Host kkbox-rdc
+  HostName i-02748057251607112
+  User ubuntu
+  Identityfile	~/.ssh/id_rsa_kfa
+  ProxyCommand sh -c "aws ssm start-session --target %h --document-name AWS-StartSSHSession --parameters 'portNumber=%p' --region us-west-2"

@@ -1,5 +1,6 @@
 set ignorecase smartcase
 set rnu
+set nu
 
 """""""""""""""""""Misc
 nmap zcc :mapclear!<CR>
