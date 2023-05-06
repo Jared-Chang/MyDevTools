@@ -72,6 +72,16 @@ Host official-site
     User admin
     IdentityFile ~/.ssh/kkfarm-2017.pem
 
+Host agoo
+    HostName 54.151.215.123
+    User admin
+    IdentityFile ~/.ssh/kkfarm-2017.pem
+
+Host funkie
+    HostName 18.139.167.3
+    User admin
+    IdentityFile ~/.ssh/kkfarm-2017.pem
+
 Host kkbox-rdc
   HostName i-02748057251607112
   User ubuntu

@@ -1,10 +1,26 @@
-[profile sa]
+[default]
 region = ap-northeast-1
-[profile playground]
+
+[profile iam]
 region = ap-northeast-1
-[profile kkbox-payer]
-region = ap-northeast-1
-[profile kfa]
-region = ap-northeast-1
+mfa_serial = arn:aws:iam::062491706396:mfa/1password
+
+[profile zero]
+source_profile = iam
+include_profile = iam
+role_arn = arn:aws:iam::307883752374:role/admin
+
 [profile billing]
-region = ap-northeast-1
+source_profile = iam
+include_profile = iam
+role_arn = arn:aws:iam::343354134708:role/admin
+
+[profile dam]
+source_profile = iam
+include_profile = iam
+role_arn = arn:aws:iam::449627648960:role/admin
+
+[profile kks]
+source_profile = iam
+include_profile = iam
+role_arn = arn:aws:iam::291104508663:role/admin
