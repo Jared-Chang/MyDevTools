@@ -42,10 +42,10 @@ brew install --cask insomnia
 brew install --cask gitkraken
 
 # Containers
+brew install --cask docker
 brew install --cask lens
 brew install kubectl
 brew install helm      
-brew install --cask docker
 
 # Misc
 
@@ -61,7 +61,7 @@ brew install --cask slack
 brew install --cask obsidian
 brew install --cask mos
 brew install --cask rectangle
-brew install --case todoist
+brew install --cask todoist
 
 # Command line tools
 
