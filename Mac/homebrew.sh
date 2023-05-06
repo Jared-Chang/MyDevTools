@@ -14,6 +14,7 @@ pip install --upgrade pip
 brew install go
 brew install flutter
 brew install tfenv
+brew install nvm
 
 # aws
 
