@@ -168,6 +168,7 @@ ohai "Downloading and installing Mac DevTool..."
   ln -s $PWD/Mac/ssh ~/.ssh
   rm -rf ~/.myzsh
   ln -s $PWD/Mac/zsh ~/.myzsh
+  mkdir -p ~/.aws
   rm -rf ~/.aws/config
   ln $PWD/Mac/aws/config ~/.aws/config
   

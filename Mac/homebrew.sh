@@ -11,6 +11,7 @@ pip install --upgrade pip
 
 # library
 
+brew install rustup-init
 brew install go
 brew install flutter
 brew install tfenv
@@ -42,10 +43,10 @@ brew install --cask insomnia
 brew install --cask gitkraken
 
 # Containers
-brew install --cask docker
 brew install --cask lens
 brew install kubectl
 brew install helm      
+brew install --cask docker
 
 # Misc
 
@@ -62,6 +63,19 @@ brew install --cask obsidian
 brew install --cask mos
 brew install --cask rectangle
 brew install --cask todoist
+brew install --cask dropbox
+brew install --cask google-drive
+brew install --cask hiddenbar
+brew install --cask cron
+brew install --cask arc
+brew install --cask notion
+brew install --cask discord
+brew install --cask miro
+brew install --cask daisydisk
+brew install --cask microsoft-teams
+brew install --cask alt-tab
+brew install --cask http-toolkit
+brew install --cask postman
 
 # Command line tools
 

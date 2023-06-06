@@ -1,3 +1,7 @@
+Host gitlab.com
+HostName gitlab.com
+IdentityFile ~/.ssh/id_rsa_gitlab_com
+
 Host outsourcing
     HostName 3.0.51.218
     User admin

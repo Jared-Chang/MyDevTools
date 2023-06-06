@@ -1,26 +1,74 @@
 [default]
 region = ap-northeast-1
 
-[profile iam]
+[profile gc]
 region = ap-northeast-1
 mfa_serial = arn:aws:iam::062491706396:mfa/1password
 
 [profile zero]
-source_profile = iam
-include_profile = iam
+source_profile = gc
+include_profile = gc
 role_arn = arn:aws:iam::307883752374:role/admin
 
 [profile billing]
-source_profile = iam
-include_profile = iam
+source_profile = gc
+include_profile = gc
 role_arn = arn:aws:iam::343354134708:role/admin
 
 [profile dam]
-source_profile = iam
-include_profile = iam
+source_profile = gc
+include_profile = gc
 role_arn = arn:aws:iam::449627648960:role/admin
 
 [profile kks]
-source_profile = iam
-include_profile = iam
+source_profile = gc
+include_profile = gc
 role_arn = arn:aws:iam::291104508663:role/admin
+
+[profile caus]
+source_profile = gc
+include_profile = gc
+role_arn = arn:aws:iam::245217882302:role/going-cloud-dev
+external_id = GC_External_ID_YXn8We7jFGqvoToKmReT
+
+[profile fca]
+source_profile = gc
+include_profile = gc
+role_arn = arn:aws:iam::353674645967:role/going-cloud-dev
+external_id = GC_External_ID_YXn8We7jFGqvoToKmReT
+
+[profile cava]
+source_profile = gc
+include_profile = gc
+role_arn = arn:aws:iam::526804304315:role/going-cloud-dev
+external_id = GC_External_ID_YXn8We7jFGqvoToKmReT
+
+[profile mbiot]
+source_profile = gc
+include_profile = gc
+role_arn = arn:aws:iam::894782496305:role/going-cloud-dev
+external_id = GC_External_ID_YXn8We7jFGqvoToKmReT
+
+[profile caau]
+source_profile = gc
+include_profile = gc
+role_arn = arn:aws:iam::983528402407:role/going-cloud-dev
+external_id = GC_External_ID_YXn8We7jFGqvoToKmReT
+
+[profile bm]
+source_profile = gc
+include_profile = gc
+role_arn = arn:aws:iam::212243981559:role/going-cloud-dev
+external_id = GC_External_ID_YXn8We7jFGqvoToKmReT
+
+[profile dhc-dev]
+source_profile = gc
+include_profile = gc
+role_arn = arn:aws:iam::310044112614:role/going-cloud-dev
+external_id = GC_External_ID_YXn8We7jFGqvoToKmReT
+
+[profile eztable]
+source_profile = gc
+include_profile = gc
+role_arn = arn:aws:iam::234232853477:role/going-cloud-purchaser
+external_id = GC_External_ID_EecuOtXT2cidOUJ85DNF
