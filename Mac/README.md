@@ -1,7 +1,7 @@
 # Installation
 
 ``` bash
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/QiFenPocket/MyDevTools/master/Mac/install.sh)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/Jared-Chang/MyDevTools/master/Mac/install.sh)"
 ```
 
 1. disable spotlight from System Preferences/Keyboard/Shortcuts/Spotlight
