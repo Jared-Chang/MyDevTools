@@ -1,10 +1,3 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n] 
-# confirmations, etc.) must go above this block; everything else may go below. 
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then 
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" 
-fi 
-
 [[ ! -f /opt/homebrew/bin/brew ]] || eval "$(/opt/homebrew/bin/brew shellenv)"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -15,6 +8,8 @@ export NVM_DIR="$HOME/.nvm"
 
 PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
+PATH="/usr/local/itms/bin:$PATH"
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh. 
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh 
+printf '\eP$f{"hook": "SourcedRcFileForWarp", "value": { "shell": "zsh"}}\x9c'
+
+eval "$(pyenv init -)"

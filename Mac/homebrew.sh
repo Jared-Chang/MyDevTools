@@ -76,10 +76,12 @@ brew install --cask microsoft-teams
 brew install --cask alt-tab
 brew install --cask http-toolkit
 brew install --cask postman
+brew install --cask zoom
 
 # Command line tools
 
 brew install htop
+brew install bottom
 brew install tmux
 brew install jq
 brew install fd
@@ -88,6 +90,7 @@ brew install dog
 brew install mysql-client
 brew install glab
 brew install gpg2
+brew install k6
 
 brew install fzf
 # To install useful key bindings and fuzzy completion:

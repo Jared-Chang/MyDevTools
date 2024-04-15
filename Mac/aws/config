@@ -5,6 +5,16 @@ region = ap-northeast-1
 region = ap-northeast-1
 mfa_serial = arn:aws:iam::062491706396:mfa/1password
 
+[profile kkboxrdc]
+source_profile = gc
+include_profile = gc
+role_arn = arn:aws:iam::036714224176:role/goingcloud
+
+[profile iseeyou]
+source_profile = gc
+include_profile = gc
+role_arn = arn:aws:iam::481029269020:role/admin
+
 [profile zero]
 source_profile = gc
 include_profile = gc
@@ -14,6 +24,12 @@ role_arn = arn:aws:iam::307883752374:role/admin
 source_profile = gc
 include_profile = gc
 role_arn = arn:aws:iam::343354134708:role/admin
+
+[profile sakura-workshop]
+source_profile = gc
+include_profile = gc
+region = us-west-2
+role_arn = arn:aws:iam::490019190787:role/admin
 
 [profile dam]
 source_profile = gc
@@ -72,3 +88,266 @@ source_profile = gc
 include_profile = gc
 role_arn = arn:aws:iam::234232853477:role/going-cloud-purchaser
 external_id = GC_External_ID_EecuOtXT2cidOUJ85DNF
+
+[profile pg]
+source_profile = gc
+include_profile = gc
+role_arn = arn:aws:iam::593713876380:role/admin
+
+[profile itri]
+source_profile = gc
+include_profile = gc
+role_arn = arn:aws:iam::116057495865:role/goingcloud
+external_id = GC_External_ID_eTcljsR6q23cjpjubsxf
+
+[profile genai]
+source_profile = gc
+include_profile = gc
+role_arn = arn:aws:iam::126175080644:role/admin
+
+[profile sd]
+source_profile = gc
+include_profile = gc
+role_arn = arn:aws:iam::541930162766:role/admin
+
+[profile kkbilling]
+source_profile = billing
+include_profile = billing
+role_arn = arn:aws:iam::343354134708:role/data-migration
+
+[profile gc-stable-diffusion]
+source_profile=gc
+include_profile=gc
+role_arn=arn:aws:iam::541930162766:role/admin
+
+[profile tf-gc-stable-diffusion]
+credential_process=aws-vault export --format=json gc-stable-diffusion
+
+[profile auer]
+source_profile=gc
+include_profile=gc
+role_arn=arn:aws:iam::597045574256:role/admin
+
+[profile tf-auer]
+credential_process=aws-vault export --format=json auer
+
+[profile yile]
+source_profile=gc
+include_profile=gc
+role_arn=arn:aws:iam::107167160367:role/admin
+
+[profile tf-yile]
+credential_process=aws-vault export --format=json yile
+
+[profile ambrus]
+source_profile=gc
+include_profile=gc
+role_arn=arn:aws:iam::031121903892:role/admin
+
+[profile tf-ambrus]
+credential_process=aws-vault export --format=json ambrus
+
+[profile model]
+source_profile=gc
+include_profile=gc
+role_arn=arn:aws:iam::412680884798:role/admin
+
+[profile tf-model]
+credential_process=aws-vault export --format=json model
+
+[profile gc-genai-playground]
+source_profile=gc
+include_profile=gc
+role_arn=arn:aws:iam::126175080644:role/admin
+
+[profile tf-gc-genai-playground]
+credential_process=aws-vault export --format=json gc-genai-playground
+
+[profile gc-playground]
+source_profile=gc
+include_profile=gc
+role_arn=arn:aws:iam::593713876380:role/admin
+
+[profile tf-gc-playground]
+credential_process=aws-vault export --format=json gc-playground
+
+[profile carrefour]
+source_profile=gc
+include_profile=gc
+role_arn=arn:aws:iam::724014994965:role/admin
+
+[profile tf-carrefour]
+credential_process=aws-vault export --format=json carrefour
+
+[profile workshop20230821]
+source_profile=gc
+include_profile=gc
+role_arn=arn:aws:iam::848023765054:role/admin
+
+[profile tf-workshop20230821]
+credential_process=aws-vault export --format=json workshop20230821
+
+[profile fcu]
+source_profile=gc
+include_profile=gc
+role_arn=arn:aws:iam::542035385954:role/admin
+
+[profile ix]
+source_profile=gc
+include_profile=gc
+role_arn=arn:aws:iam::026035388811:role/admin
+
+[profile rosetta]
+source_profile=ix
+include_profile=ix
+role_arn=arn:aws:iam::160470096342:role/OrganizationAccountAccessRole
+
+[profile xiv]
+source_profile=gc
+include_profile=gc
+role_arn=arn:aws:iam::407559337512:role/admin
+
+[profile leomodbus]
+source_profile=xiv
+include_profile=xiv
+role_arn=arn:aws:iam::921942206953:role/OrganizationAccountAccessRole
+
+[profile leochatbot]
+source_profile=xiv
+include_profile=xiv
+role_arn=arn:aws:iam::623620439330:role/OrganizationAccountAccessRole
+
+[profile xi]
+source_profile=gc
+include_profile=gc
+role_arn=arn:aws:iam::132302806234:role/admin
+
+[profile cs1111]
+source_profile=xi
+include_profile=xi
+role_arn=arn:aws:iam::517483476912:role/OrganizationAccountAccessRole
+
+[profile dalabx]
+source_profile=xi
+include_profile=xi
+role_arn=arn:aws:iam::730335428119:role/OrganizationAccountAccessRole
+
+[profile x]
+source_profile=gc
+include_profile=gc
+role_arn=arn:aws:iam::768418356661:role/admin
+
+[profile taitrabedrock]
+source_profile=x
+include_profile=x
+role_arn=arn:aws:iam::843861382082:role/OrganizationAccountAccessRole
+
+[profile acerworkshop]
+source_profile=x
+include_profile=x
+role_arn=arn:aws:iam::211125643262:role/OrganizationAccountAccessRole
+
+[profile acerworkshop1]
+source_profile=x
+include_profile=x
+role_arn=arn:aws:iam::381492022513:role/OrganizationAccountAccessRole
+
+[profile acerworkshop2]
+source_profile=x
+include_profile=x
+role_arn=arn:aws:iam::058264080677:role/OrganizationAccountAccessRole
+
+[profile acerworkshop3]
+source_profile=x
+include_profile=x
+role_arn=arn:aws:iam::590184124377:role/OrganizationAccountAccessRole
+
+[profile sakura-2]
+source_profile=x
+include_profile=x
+role_arn=arn:aws:iam::206744646819:role/OrganizationAccountAccessRole
+
+[profile hs]
+source_profile=x
+include_profile=x
+role_arn=arn:aws:iam::741028720589:role/OrganizationAccountAccessRole
+
+[profile sprint-tree]
+source_profile=x
+include_profile=x
+role_arn=arn:aws:iam::871788191683:role/OrganizationAccountAccessRole
+
+[profile HuaNan]
+source_profile=x
+include_profile=x
+role_arn=arn:aws:iam::807667518593:role/OrganizationAccountAccessRole
+
+[profile breeze]
+source_profile=x
+include_profile=x
+role_arn=arn:aws:iam::432505775376:role/OrganizationAccountAccessRole
+
+[profile wan]
+source_profile=x
+include_profile=x
+role_arn=arn:aws:iam::002571568029:role/OrganizationAccountAccessRole
+
+[profile dhc-workshop]
+source_profile=x
+include_profile=x
+role_arn=arn:aws:iam::672948321976:role/OrganizationAccountAccessRole
+
+[profile fable]
+source_profile=x
+include_profile=x
+role_arn=arn:aws:iam::400112335337:role/OrganizationAccountAccessRole
+
+[profile bot]
+source_profile=x
+include_profile=x
+role_arn=arn:aws:iam::832864187357:role/OrganizationAccountAccessRole
+
+[profile taitra1]
+source_profile=x
+include_profile=x
+role_arn=arn:aws:iam::223681630281:role/OrganizationAccountAccessRole
+
+[profile taitra2]
+source_profile=x
+include_profile=x
+role_arn=arn:aws:iam::889930826600:role/OrganizationAccountAccessRole
+
+[profile ecn]
+source_profile=x
+include_profile=x
+role_arn=arn:aws:iam::851725478335:role/OrganizationAccountAccessRole
+
+[profile gcadmin]
+source_profile=zero
+include_profile=zero
+role_arn=arn:aws:iam::187326099990:role/OrganizationAccountAccessRole
+
+[profile oc]
+source_profile=zero
+include_profile=zero
+role_arn=arn:aws:iam::865548450172:role/OrganizationAccountAccessRole
+
+[profile workshop]
+source_profile=zero
+include_profile=zero
+role_arn=arn:aws:iam::923210505456:role/OrganizationAccountAccessRole
+
+[profile jb]
+source_profile=zero
+include_profile=zero
+role_arn=arn:aws:iam::677105298582:role/OrganizationAccountAccessRole
+
+[profile xviii]
+source_profile=gc
+include_profile=gc
+role_arn=arn:aws:iam::378008044524:role/admin
+
+[profile mirle]
+source_profile=xviii
+include_profile=xviii
+role_arn=arn:aws:iam::284946506253:role/OrganizationAccountAccessRole

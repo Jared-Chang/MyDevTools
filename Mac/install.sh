@@ -160,8 +160,6 @@ ohai "Downloading and installing Mac DevTool..."
   ln $PWD/gitalias/gitalias.txt ~/.gitalias
   rm -f ~/.gitconfig
   ln $PWD/Mac/.gitconfig ~/.gitconfig
-  rm -f ~/.p10k.zsh
-  ln $PWD/Mac/.p10k.zsh ~/.p10k.zsh
   rm -f ~/.zshrc
   ln $PWD/Mac/.zshrc ~/.zshrc
   rm -rf ~/.ssh

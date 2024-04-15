@@ -103,3 +103,13 @@ aws_set_credential() {
   export AWS_SECRET_ACCESS_KEY=$(echo $credential | jq -r .Credentials.SecretAccessKey)
   export AWS_SESSION_TOKEN=$(echo $credential | jq -r .Credentials.SessionToken)
 }
+
+avl() {
+  data_dir="/tmp/chrome.aws.$1"
+  mkdir -p $data_dir
+  aws-vault login -s $1 | xargs /Applications/Brave\ Browser.app/Contents/MacOS/Brave\ Browser --args --lang="en_us" --no-first-run --new-window --disk-cache=$data_dir --user-data-dir=$data_dir --enable-chrome-browser-cloud-management
+}
+
+compress() {
+ffmpeg -i $1 -r 12 -an $2
+}

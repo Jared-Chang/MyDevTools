@@ -53,9 +53,6 @@ zinit light djui/alias-tips
 zinit ice lucid wait='0'
 zinit light agkozak/zsh-z
 
-zinit ice depth=1
-zinit light romkatv/powerlevel10k 
-
 zinit ice lucid wait='0'
 zinit light Aloxaf/fzf-tab
 
